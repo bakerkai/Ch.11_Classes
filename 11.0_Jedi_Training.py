@@ -8,21 +8,27 @@
  #     * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
 
 class Animal():
-    def __init__(self,new_name):
-        print("An animal has been born")
-        self.new_name = ""
-        self.now_eat = print("Munch munch")
-        self.now_noise = print("Grrr says " + self.new_name)
+    def __init__(self,name):
+        self.name = name
+        print("An animal has been born.")
+    def eat(self):
+        print("Munch munch.")
+    def make_noise(self):
+        print("Grrr says", self.name)
 
-anim1 = Animal('bob')
-     
  # 2. Write code that defines a class named Cat:
  #     * Make Animal the parent.
  #     * Add a constructor for Cat that prints 'A cat has been born.'
  #     * Modify the constructor so it calls the parent constructor as well.
  #     * Add a make_noise() method for Cat that prints 'Meow says [animal name].'
 
-     
+class Cat(Animal):
+    def __init__(self,name):
+        super().__init__(name)
+        print("An cat has been born.")
+    def make_noise(self):
+        print("Meow says", self.name)
+
  # 3. Write code that defines a class named Dog:
  #
  #     * Make Animal the parent.
@@ -30,7 +36,32 @@ anim1 = Animal('bob')
  #     * Modify the constructor so it calls the parent constructor as well.
  #     * Add a make_noise() method for Dog that prints 'Bark says [animal name].'
 
-     
+class Dog(Animal):
+    def __init__(self,name):
+        super().__init__(name)
+        print("An dog has been born.")
+    def make_noise(self):
+        print("Bark says", self.name)
+
+def myprogram():
+    cat=Cat("Felix")
+    cat.eat()
+    cat.make_noise()
+
+    dog1=Dog("Rover")
+    dog1.eat()
+    dog1.make_noise()
+
+    dog2=Dog("Hooch")
+    dog2.eat()
+    dog2.make_noise()
+
+    thing=Animal("Leviathon")
+    thing.eat()
+    thing.make_noise()
+
+if __name__ == "__main__":
+    myprogram()
  # 4. Write a main program with:
  #
  #     * Code that creates a cat, two dogs, and an animal with names.
