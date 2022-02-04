@@ -36,6 +36,13 @@ USS Hermon is submerging!
 11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
 12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging"
 if the boat is undocked and "(boat name) can't submerge" if the boat is docked.
+
+14.) Call the dock( ) method once
+15.) Call the undock( ) method twice
+16.) Call the dock( ) method two more times
+17.) Call the submerge( ) method once
+18.) Call the undock( ) method once
+19.) Call the submerge( ) method a final time.
 '''
 class Boat():
     def __init__(self, name):
@@ -43,9 +50,9 @@ class Boat():
         self.isDocked = True
     def dock(self):
         if self.isDocked == True:
-            print(self.name, "Is docked.")
+            print(self.name, "Is already docked.")
         else:
-            print(self.name, "Is not docked, and is now docking.")
+            print(self.name, "Is docking.")
             self.isDocked = True
     def undock(self):
         if self.isDocked == False:
@@ -61,12 +68,16 @@ class Submarine(Boat):
             self.isDocked = False
             print(self.name, "Is submerging")
 
-
-
-
 def myprogram():
-    bote = Submarine("USS Hermon")
-    bote.dock()
+    USSHermon = Submarine("USS Hermon")
+    USSHermon.dock()
+    USSHermon.undock()
+    USSHermon.dock()
+    USSHermon.submerge()
+    USSHermon.undock()
+    USSHermon.submerge()
+
+
 
 
 
