@@ -65,7 +65,8 @@ class Submarine(Boat):
 
 
 def myprogram():
-    submarine = Submarine("USS Hermon")
+    bote = Submarine("USS Hermon")
+    bote.dock()
 
 
 
